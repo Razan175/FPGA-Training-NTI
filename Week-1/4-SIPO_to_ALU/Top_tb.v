@@ -58,7 +58,7 @@ initial begin
         if (alu_out == expected_out)
             $display ("ALU output is correct, expected: %h actual: %h,  opcode:%b, A: %h B: %h,", expected_out, alu_out, input_instruction[18:16], input_instruction[15:8], input_instruction[7:0]);
         else
-            $error("ALU output is not as expected, expected: %h actual: %h", expected_out, alu_out);
+            $error("ALU output is not as expected, expected: %h actual: %h,  opcode:%b, A: %h B: %h,", expected_out, alu_out, input_instruction[18:16], input_instruction[15:8], input_instruction[7:0]);
 
         @(negedge clk) rst_n = 0;
     end
